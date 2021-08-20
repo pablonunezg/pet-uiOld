@@ -1,0 +1,15 @@
+{
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact",
+    "typescript": "typescriptreact"
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "eslint.validate": ["javascript", "typescript", "typescriptreact"],
+  "CSSNavigation.activeCSSFileExtensions": [
+    "css",
+    "scss",
+    "sass"
+ ]
+}
