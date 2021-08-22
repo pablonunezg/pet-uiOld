@@ -1,15 +1,35 @@
+import Typography from "@material-ui/core/Typography";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
+import { useTheme } from "@material-ui/core/styles";
 import React from "react";
 
 interface Person {
+  bgcolor:string,
   name?: string;
 }
 
-function App({ name }: Person) {
-  return <h1>{process.env.REACT_APP_MESSAGE} {name}</h1>;
+const styles = {
+  ":hover": {
+    boxShadow: 6,
+  },
+  color: {
+    xs: "red",
+    md: "blue",
+  },
+};
+
+function App({ name, ...demas }: Person) {
+  const theme = useTheme();
+  const matches = useMediaQuery(theme.breakpoints.up("md"));
+  return (
+    <Typography sx={styles} variant="h1" {... demas}>
+      Hello World {name} {matches.toString()}
+    </Typography>
+  );
 }
 
 App.defaultProps = {
-  name: "World",
+  name: "Pablo",
 };
 
 export default App;
