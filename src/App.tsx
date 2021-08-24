@@ -4,7 +4,7 @@ import { useTheme } from "@material-ui/core/styles";
 import React from "react";
 
 interface Person {
-  bgcolor:string,
+  bgcolor: string;
   name?: string;
 }
 
@@ -24,7 +24,7 @@ function App({ name, ...demas }: Person) {
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.up("md"));
   return (
-    <Typography sx={styles} variant="h1" {... demas}>
+    <Typography sx={styles} variant="h1" {...demas}>
       Hello World {name} {matches.toString()}
     </Typography>
   );

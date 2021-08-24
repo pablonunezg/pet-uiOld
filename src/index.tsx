@@ -9,20 +9,6 @@ import App from "App";
 import { ThemeProvider, createTheme } from "@material-ui/core/styles";
 import reportWebVitals from "reportWebVitals";
 
-declare module "@material-ui/core/styles" {
-  interface Theme {
-    status: {
-      danger: string;
-    };
-  }
-  // allow configuration using `createTheme`
-  interface ThemeOptions {
-    status?: {
-      danger?: string;
-    };
-  }
-}
-
 const theme = createTheme({
   palette: {
     primary: {
