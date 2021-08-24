@@ -13,10 +13,12 @@ const styles = {
     boxShadow: 6,
   },
   color: {
-    xs: "red",
-    md: "blue",
+    xs: "green",
+    md: "red",
   },
+  backgroundColor: "secondary.main",
 };
+// backgroundColor: (theme:any) => theme.palette.secondary.main,
 
 function App({ name, ...demas }: Person) {
   const theme = useTheme();
