@@ -6,11 +6,45 @@ import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 import App from "App";
+import { ThemeProvider, createTheme } from "@material-ui/core/styles";
 import reportWebVitals from "reportWebVitals";
+
+declare module "@material-ui/core/styles" {
+  interface Theme {
+    status: {
+      danger: string;
+    };
+  }
+  // allow configuration using `createTheme`
+  interface ThemeOptions {
+    status?: {
+      danger?: string;
+    };
+  }
+}
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      // light: will be calculated from palette.primary.main,
+      main: "#ff4400",
+      // dark: will be calculated from palette.primary.main,
+      // contrastText: will be calculated to contrast with palette.primary.main
+    },
+    secondary: {
+      light: "#0066ff",
+      main: "#7FC8A9",
+      // dark: will be calculated from palette.secondary.main,
+      contrastText: "#ffcc00",
+    },
+  },
+});
 
 ReactDOM.render(
   <React.StrictMode>
-    <App bgcolor="red" />
+    <ThemeProvider theme={theme}>
+      <App bgcolor="red" />
+    </ThemeProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );
