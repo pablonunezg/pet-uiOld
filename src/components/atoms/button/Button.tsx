@@ -1,5 +1,5 @@
 import React from "react";
-import MUIButton, { ButtonProps } from "@material-ui/core/Button";
+import MUIButton, { ButtonProps } from "@mui/material/Button";
 
 export default function Button({
   children,
